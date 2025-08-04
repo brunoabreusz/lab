@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva -->
   <title>MelhordeSi</title>
   <link rel="icon" href="2.jpg" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,34 +18,81 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       flex-direction: column;
+      margin: 0;
+      padding: 20px;
+      text-align: center; /* Garante alinhamento no mobile */
     }
 
     h1 {
       color: #1B5F30;
-      margin-bottom: 0;
+      margin-bottom: 0.2em;
+      font-size: 2rem;
     }
 
     h2 {
       color: #999999;
       margin-top: 0;
+      font-size: 1.2rem;
     }
 
     h4 {
-      margin-top: 50px;
+      margin-top: 30px;
       margin-bottom: 0;
       color: #999999;
+      font-size: 1rem;
     }
 
     h4 a {
       text-decoration: none;
       color: #1B5F30;
-      margin: 0;
     }
 
     a:hover {
       color: #464343;
+    }
+
+    /* ✅ Tornando o vídeo responsivo */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 910px; /* Limite para telas grandes */
+      aspect-ratio: 16 / 9; /* Mantém proporção */
+      margin-top: 20px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    /* ✅ Ajustes para telas menores */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      h4 {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -52,13 +100,17 @@
 <body>
   <h1>Não destrua o seu cérebro.</h1>
   <h2>Busque o MelhordeSi!</h2>
-  <iframe width="910" height="506" src="https://www.youtube.com/embed/55e7YUVxOqQ" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-  </iframe>
-  <h4>Aguarde.. Novo site em construção! <a target="_blank" href="https://www.instagram.com/melhordesi.oficial/">©
-      MelhordeSi</a></h4>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/55e7YUVxOqQ" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
   </div>
 
+  <h4>
+    Aguarde.. Novo site em construção!
+    <a target="_blank" href="https://www.instagram.com/melhordesi.oficial/">© MelhordeSi</a>
+  </h4>
 </body>
 
 </html>
